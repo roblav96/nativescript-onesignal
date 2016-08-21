@@ -1,11 +1,8 @@
 {
   "nativescript": {
-    "id": "org.nativescript.demo",
+    "id": "org.nativescript.demoz",
     "tns-ios": {
       "version": "2.2.1"
-    },
-    "tns-android": {
-      "version": "2.2.0"
     }
   },
   "dependencies": {

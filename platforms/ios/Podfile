@@ -1,2 +1,1 @@
-# pod 'OneSignal'
-pod 'OneSignal', '~> 1.13.2'
+pod 'OneSignal', '~> 1.11.2'

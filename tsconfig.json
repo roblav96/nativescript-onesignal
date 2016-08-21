@@ -5,6 +5,7 @@
         "removeComments": true,
         "experimentalDecorators": true,
         "noEmitHelpers": true,
+        "noEmitOnError": false,
         "declaration": true
     },
     "files": [

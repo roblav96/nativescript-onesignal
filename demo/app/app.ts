@@ -15,6 +15,7 @@ if (application.ios) {
 			global.tnsconsole.log('applicationDidFinishLaunchingWithOptions >')
 			
 			global.tnsconsole.dump('OneSignal', OneSignal)
+			// global.tnsconsole.dump('GMSServices', GMSServices)
 
 			// OneSignal.initWithLaunchOptions(launchOptions, appId: "5eb5a37e-b458-11e3-ac11-000c2940e62c")
 
