@@ -1,1 +1,1 @@
-OTHER_LDFLAGS = $(inherited) -ObjC -framework SystemConfiguration
+OTHER_LDFLAGS = $(inherited) -ObjC -lz -framework SystemConfiguration -framework OneSignal
