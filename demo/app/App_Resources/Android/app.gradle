@@ -1,6 +1,13 @@
-// Add your native dependencies here:
+// 
 
-// Uncomment to add recyclerview-v7 dependency
-//dependencies {
-//	compile 'com.android.support:recyclerview-v7:+'
-//}
+android {
+	defaultConfig {
+		applicationId "org.nativescript.demo"
+		manifestPlaceholders = [
+			manifestApplicationId: "${applicationId}",
+			onesignal_app_id: "b2f7f966-d8cc-11e4-bed1-df8f05be55ba",
+			onesignal_google_project_number: "703322744261"
+		]
+	}
+}
+

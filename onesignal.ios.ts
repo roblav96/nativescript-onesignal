@@ -1,18 +1,9 @@
 // 
 
-import * as application from 'application'
+// export declare class OneSignal { }
+// export declare class TnsOneSignal extends OneSignal { }
+
+// export class TnsOneSignal
+
 declare var OneSignal: any
-
-
-
-export class TnsOneSignal {
-
-	constructor() {
-		global.tnsconsole.log('TnsOneSignal > constructor')
-	}
-
-}
-
-
-
-
+export var TnsOneSignal: any = OneSignal

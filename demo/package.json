@@ -1,6 +1,6 @@
 {
   "nativescript": {
-    "id": "org.nativescript.demoz",
+    "id": "org.nativescript.demo",
     "tns-ios": {
       "version": "2.2.1"
     },
@@ -9,9 +9,6 @@
     }
   },
   "dependencies": {
-    "ansicolors": "*",
-    "ansistyles": "*",
-    "lodash": "*",
     "nativescript-onesignal": "file:..",
     "tns-core-modules": "^2.2.0"
   },

@@ -1,3 +1,1 @@
-export declare class TnsOneSignal {
-    constructor();
-}
+export declare var TnsOneSignal: any;
