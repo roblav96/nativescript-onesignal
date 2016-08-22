@@ -2,6 +2,7 @@
 
 import "./tns.console";
 import * as application from 'application';
+declare var com: any
 declare var OneSignal: any
 
 
@@ -13,7 +14,7 @@ if (application.ios) {
 
 		private applicationDidFinishLaunchingWithOptions(app: UIApplication, launchOptions: NSDictionary): boolean {
 			global.tnsconsole.log('applicationDidFinishLaunchingWithOptions >')
-			
+
 			global.tnsconsole.dump('OneSignal', OneSignal)
 			// global.tnsconsole.dump('GMSServices', GMSServices)
 
@@ -25,5 +26,15 @@ if (application.ios) {
 	}
 	application.ios.delegate = MyDelegate
 }
+
+
+
+if (application.android) {
+	application.on(application.launchEvent, function(args: application.ApplicationEventData) {
+		com.onesignal.OneSignal.startInit(application.android.context).init()
+	})
+}
+
+
 
 application.start({ moduleName: 'main-page' });

@@ -1,14 +1,13 @@
 // 
 
 import * as application from 'application'
-declare let OneSignal: any
 
 
 
 export class TnsOneSignal {
 
 	constructor() {
-		
+		global.tnsconsole.log('TnsOneSignal > constructor')
 	}
 
 }

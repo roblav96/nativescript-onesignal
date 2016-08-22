@@ -15,7 +15,6 @@
 		"url": "https://github.com/roblav96/nativescript-onesignal.git"
 	},
 	"keywords": [
-		"NativeScript",
 		"nativescript",
 		"onesignal",
 		"ecosystem:nativescript",
@@ -38,7 +37,7 @@
 	"scripts": {
 		"build": "tsc",
 		"demo.ios": "npm run preparedemo && cd demo && tns run ios --watch",
-		"demo.android": "npm run preparedemo && cd demo && tns run android",
+		"demo.android": "npm run preparedemo && cd demo && tns run android --watch",
 		"preparedemo": "npm run build && cd demo && tns plugin remove nativescript-onesignal && tns plugin add .. && tns install",
 		"setup": "npm i && cd demo && npm i && cd .. && npm run build && cd demo && tns plugin add .. && cd .."
 	},
