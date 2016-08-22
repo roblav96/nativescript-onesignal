@@ -1,5 +1,5 @@
 # NativeScript-OneSignal
-This is a Nativescript plugin that wraps the iOS and Android OneSignal Push Notifications SDK.
+A Nativescript plugin that wraps the iOS and Android OneSignal Push Notifications SDK.
 
 ## Contributors
 
@@ -25,6 +25,12 @@ Does not need any configuration.
 In your `app.gradle`:
 
 ```
+dependencies {
+	compile "com.onesignal:OneSignal:3.+@aar"
+	compile "com.google.android.gms:play-services-gcm:+"
+	compile "com.google.android.gms:play-services-location:+"
+}
+
 android {
 	defaultConfig {
 		applicationId "org.nativescript.demo"
