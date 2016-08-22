@@ -41,7 +41,7 @@ android {
 ### Typescript
 
 ```typescript
-import {TnsOneSignal} from 'nativescript-onesignal'
+var TnsOneSignal = require('nativescript-onesignal').TnsOneSignal
 ```
 
 ### iOS
@@ -52,7 +52,7 @@ In your `main.ts`:
 
 ```typescript
 import * as application from 'application';
-import {TnsOneSignal} from 'nativescript-onesignal'
+var TnsOneSignal = require('nativescript-onesignal').TnsOneSignal
 
 if (application.ios) {
 	class MyDelegate extends UIResponder implements UIApplicationDelegate {
@@ -86,7 +86,7 @@ In your `main.ts`:
 
 ```typescript
 import * as application from 'application';
-import {TnsOneSignal} from 'nativescript-onesignal'
+var TnsOneSignal = require('nativescript-onesignal').TnsOneSignal
 
 if (application.android) {
 	application.on(application.launchEvent, function(args: application.ApplicationEventData) {
