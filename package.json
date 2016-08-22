@@ -1,6 +1,6 @@
 {
 	"name": "nativescript-onesignal",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "A Nativescript plugin for OneSignal's Push Notifications SDK",
 	"main": "onesignal.js",
 	"typings": "index.d.ts",
@@ -23,7 +23,7 @@
 	],
 	"author": {
 		"name": "Rob Laverty",
-		"email": "roblav96@gmx.com"
+		"email": "roblav96@gmail.com"
 	},
 	"license": {
 		"type": "MIT",
@@ -36,7 +36,7 @@
 	"readmeFilename": "README.md",
 	"scripts": {
 		"build": "tsc",
-		"demo.ios": "npm run preparedemo && cd demo && tns livesync ios --watch",
+		"demo.ios": "npm run preparedemo && cd demo && tns run ios",
 		"demo.android": "npm run preparedemo && cd demo && tns run android",
 		"preparedemo": "npm run build && cd demo && tns plugin remove nativescript-onesignal && tns plugin add .. && tns install",
 		"setup": "npm i && cd demo && npm i && cd .. && npm run build && cd demo && tns plugin add .. && cd .."
