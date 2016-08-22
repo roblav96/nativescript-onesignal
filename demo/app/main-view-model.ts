@@ -15,7 +15,8 @@ export class HelloWorldModel extends Observable {
 		super();
 		this.message = 'onesignal'
 
-		global.tnsconsole.log('TnsOneSignal', TnsOneSignal)
+		TnsOneSignal
+		// global.tnsconsole.log('TnsOneSignal', TnsOneSignal)
 		// let tnsonesignal = new TnsOneSignal()
 		// global.tnsconsole.dump('tnsonesignal', tnsonesignal)
 		// let mydelegate = new MyDelegate()

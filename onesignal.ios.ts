@@ -9,7 +9,6 @@ export class TnsOneSignal {
 
 	constructor() {
 		global.tnsconsole.log('TnsOneSignal > constructor')
-		global.tnsconsole.dump('OneSignal', OneSignal)
 	}
 
 }
