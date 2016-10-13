@@ -1,9 +1,12 @@
 // 
-// this throws build error
-// 
-// Build file 'Project/platforms/android/build.gradle' line: 348
-// > String index out of range: -1
-// 
+
+android {
+	productFlavors {
+		"nativescriptonesignal" {
+			dimension "nativescriptonesignal"
+		}
+	}
+}
 
 dependencies {
 	compile "com.onesignal:OneSignal:3.3.0"
