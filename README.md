@@ -22,26 +22,7 @@ Does not need any configuration.
 
 ### Android
 
-In your `app.gradle`:
-
-```
-dependencies {
-	compile "com.onesignal:OneSignal:3.+@aar"
-	compile "com.google.android.gms:play-services-gcm:+"
-	compile "com.google.android.gms:play-services-location:+"
-}
-
-android {
-	defaultConfig {
-		applicationId "org.nativescript.demo"
-		manifestPlaceholders = [
-			manifestApplicationId: "${applicationId}",
-			onesignal_app_id: "b2f7f966-d8cc-11e4-bed1-df8f05be55ba",
-			onesignal_google_project_number: "703322744261"
-		]
-	}
-}
-```
+Does not need any configuration.
 
 ## Usage
 ### Typescript
