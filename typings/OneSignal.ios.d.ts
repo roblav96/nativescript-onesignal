@@ -24,13 +24,19 @@ declare class OSNotification extends NSObject {
 
 	static new(): OSNotification; // inherited from NSObject
 
-	/* readonly */ displayType: OSNotificationDisplayType;
+	readonly displayType: OSNotificationDisplayType;
 
-	/* readonly */ payload: OSNotificationPayload;
+	readonly isAppInFocus: boolean;
 
-	/* readonly */ shown: boolean;
+	readonly mutableContent: boolean;
 
-	/* readonly */ silentNotification: boolean;
+	readonly payload: OSNotificationPayload;
+
+	readonly shown: boolean;
+
+	readonly silentNotification: boolean;
+
+	stringify(): string;
 }
 
 declare class OSNotificationAction extends NSObject {
@@ -39,9 +45,9 @@ declare class OSNotificationAction extends NSObject {
 
 	static new(): OSNotificationAction; // inherited from NSObject
 
-	/* readonly */ actionID: string;
+	readonly actionID: string;
 
-	/* readonly */ type: OSNotificationActionType;
+	readonly type: OSNotificationActionType;
 }
 
 declare const enum OSNotificationActionType {
@@ -53,11 +59,24 @@ declare const enum OSNotificationActionType {
 
 declare const enum OSNotificationDisplayType {
 
-	Notification = 0,
+	None = 0,
 
 	InAppAlert = 1,
 
-	None = 2
+	Notification = 2
+}
+
+declare class OSNotificationOpenedResult extends NSObject {
+
+	static alloc(): OSNotificationOpenedResult; // inherited from NSObject
+
+	static new(): OSNotificationOpenedResult; // inherited from NSObject
+
+	readonly action: OSNotificationAction;
+
+	readonly notification: OSNotification;
+
+	stringify(): string;
 }
 
 declare class OSNotificationPayload extends NSObject {
@@ -66,40 +85,29 @@ declare class OSNotificationPayload extends NSObject {
 
 	static new(): OSNotificationPayload; // inherited from NSObject
 
-	/* readonly */ actionButtons: NSDictionary<any, any>;
+	readonly actionButtons: NSArray<any>;
 
-	/* readonly */ additionalData: NSDictionary<any, any>;
+	readonly additionalData: NSDictionary<any, any>;
 
-	/* readonly */ attachments: NSDictionary<any, any>;
+	readonly attachments: NSDictionary<any, any>;
 
-	/* readonly */ badge: number;
+	readonly badge: number;
 
-	/* readonly */ body: string;
+	readonly body: string;
 
-	/* readonly */ contentAvailable: boolean;
+	readonly contentAvailable: boolean;
 
-	/* readonly */ launchURL: string;
+	readonly launchURL: string;
 
-	/* readonly */ notificationID: string;
+	readonly notificationID: string;
 
-	/* readonly */ rawPayload: NSDictionary<any, any>;
+	readonly rawPayload: NSDictionary<any, any>;
 
-	/* readonly */ sound: string;
+	readonly sound: string;
 
-	/* readonly */ subtitle: string;
+	readonly subtitle: string;
 
-	/* readonly */ title: string;
-}
-
-declare class OSNotificationResult extends NSObject {
-
-	static alloc(): OSNotificationResult; // inherited from NSObject
-
-	static new(): OSNotificationResult; // inherited from NSObject
-
-	/* readonly */ action: OSNotificationAction;
-
-	/* readonly */ notification: OSNotification;
+	readonly title: string;
 }
 
 declare class OneSignal extends NSObject {
@@ -126,15 +134,17 @@ declare class OneSignal extends NSObject {
 
 	static initWithLaunchOptionsAppId(launchOptions: NSDictionary<any, any>, appId: string): any;
 
-	static initWithLaunchOptionsAppIdHandleNotificationAction(launchOptions: NSDictionary<any, any>, appId: string, actionCallback: (p1: OSNotificationResult) => void): any;
+	static initWithLaunchOptionsAppIdHandleNotificationAction(launchOptions: NSDictionary<any, any>, appId: string, actionCallback: (p1: OSNotificationOpenedResult) => void): any;
 
-	static initWithLaunchOptionsAppIdHandleNotificationActionSettings(launchOptions: NSDictionary<any, any>, appId: string, actionCallback: (p1: OSNotificationResult) => void, settings: NSDictionary<any, any>): any;
+	static initWithLaunchOptionsAppIdHandleNotificationActionSettings(launchOptions: NSDictionary<any, any>, appId: string, actionCallback: (p1: OSNotificationOpenedResult) => void, settings: NSDictionary<any, any>): any;
 
-	static initWithLaunchOptionsAppIdHandleNotificationReceivedHandleNotificationActionSettings(launchOptions: NSDictionary<any, any>, appId: string, receivedCallback: (p1: OSNotification) => void, actionCallback: (p1: OSNotificationResult) => void, settings: NSDictionary<any, any>): any;
+	static initWithLaunchOptionsAppIdHandleNotificationReceivedHandleNotificationActionSettings(launchOptions: NSDictionary<any, any>, appId: string, receivedCallback: (p1: OSNotification) => void, actionCallback: (p1: OSNotificationOpenedResult) => void, settings: NSDictionary<any, any>): any;
 
 	static new(): OneSignal; // inherited from NSObject
 
 	static onesignal_LogMessage(logLevel: ONE_S_LOG_LEVEL, message: string): void;
+
+	static parseNSErrorAsJsonString(error: NSError): string;
 
 	static postNotification(jsonData: NSDictionary<any, any>): void;
 
@@ -156,6 +166,8 @@ declare class OneSignal extends NSObject {
 
 	static sendTagsWithJsonString(jsonString: string): void;
 
+	static setLocationShared(enable: boolean): void;
+
 	static setLogLevelVisualLevel(logLevel: ONE_S_LOG_LEVEL, visualLogLevel: ONE_S_LOG_LEVEL): void;
 
 	static setSubscription(enable: boolean): void;
@@ -168,3 +180,5 @@ declare var kOSSettingsKeyAutoPrompt: string;
 declare var kOSSettingsKeyInAppAlerts: string;
 
 declare var kOSSettingsKeyInAppLaunchURL: string;
+
+declare var kOSSettingsKeyInFocusDisplayOption: string;
