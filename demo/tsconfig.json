@@ -2,13 +2,25 @@
     "compilerOptions": {
         "module": "commonjs",
         "target": "es5",
-        "sourceMap": true,
+        "lib": [
+            "es2016"
+        ],
         "experimentalDecorators": true,
-        "noEmitOnError": false,
-        "noEmitHelpers": true
+        "emitDecoratorMetadata": true,
+        "skipLibCheck": true,
+        "skipDefaultLibCheck": true,
+        "removeComments": true,
+        "pretty": true
     },
+    "include": [
+        "references.d.ts",
+        "../typings/**/*.ts",
+        "app/**/*.ts"
+    ],
     "exclude": [
         "node_modules",
+        "hooks",
+        "lib",
         "platforms"
     ]
 }

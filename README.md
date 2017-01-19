@@ -1,123 +1,96 @@
-# NativeScript-OneSignal
-A Nativescript plugin that wraps the iOS and Android OneSignal Push Notifications SDK.
+# Develop a NativeScript plugin now (w/ TypeScript)
 
-## Contributors
+## Getting started
 
-[OneSignal-iOS-SDK](https://github.com/OneSignal/OneSignal-iOS-SDK)
+1. `git clone https://github.com/NathanWalker/nativescript-plugin-seed.git myplugin`
+2. `npm install -g typescript`
+3. `cd myplugin`
+4. `npm run postclone`
+5. `npm run setup`
+6. Get to work.
 
-[OneSignal-Android-SDK](https://github.com/OneSignal/OneSignal-Android-SDK)
-
-## Supported Platforms
-- iOS
-- Android
-
-## Installation
-```bash
-tns plugin add nativescript-onesignal
-```
-
-### iOS
-
-Does not need any configuration.
-
-### Android
-
-Does not need any configuration.
+This seed expands on several things [presented here](http://developer.telerik.com/featured/creating-nativescript-plugins-in-typescript/).
 
 ## Usage
-### Typescript
 
-```typescript
-var TnsOneSignal = require('nativescript-onesignal').TnsOneSignal
+The seed is prepared to allow you to test and try out your plugin via the `demo` folder.
+Additionally it provides a proper `.gitignore` to keep GitHub tidy as well as `.npmignore` to ensure everyone is happy when you publish your plugin via npm.
+
+### Linking to CocoaPod or Android Arsenal plugins
+
+You will want to create these folders and files in the root:
+
+```
+platforms --
+  ios --
+    Podfile
+  android --
+    include.gradle
 ```
 
-### iOS
+Doing so will open up those native apis to your plugin :)
 
-`TnsOneSignal` is the native iOS `OneSignal` class.
+Take a look at these existing plugins for how that can be done very simply:
 
-In your `main.ts`:
+* [nativescript-cardview](https://github.com/bradmartin/nativescript-cardview/tree/master/platforms)
+* [nativescript-floatingactionbutton](https://github.com/bradmartin/nativescript-floatingactionbutton/tree/master/platforms)
 
-```typescript
-import * as application from 'application';
-var TnsOneSignal = require('nativescript-onesignal').TnsOneSignal
+### Typical development workflow:
 
-if (application.ios) {
-	class MyDelegate extends UIResponder implements UIApplicationDelegate {
+1. Make changes to plugin files
+2. Make changes in `demo` that would test those changes out
+3. `npm run demo.ios` or `npm run demo.android`  **(must be run from the root directory)**
 
-		public static ObjCProtocols = [UIApplicationDelegate]
+Those `demo` tasks are just general helpers. You may want to have more granular control on the device and/or emulator you want to run. For that, you can just run things the manual way:
 
-		private applicationDidFinishLaunchingWithOptions(app: UIApplication, launchOptions: NSDictionary): boolean {
+```
+cd demo
 
-			try {
+// when developing, to ensure the latest code is built into the demo, it's a guarantee to remove the plugin and add it back
+tns plugin remove nativescript-onesignal
+tns plugin add ..
 
-				console.dump('TnsOneSignal', TnsOneSignal)
-				TnsOneSignal.initWithLaunchOptionsAppId(launchOptions, 'b2f7f966-d8cc-11e4-bed1-df8f05be55ba')
-
-			} catch (error) {
-				console.error('error', error)
-			}
-
-			return true
-		}
-
-	}
-	application.ios.delegate = MyDelegate
-}
+// manual platform adds
+tns platform add ios
+// and/or
+tns platform add android
 ```
 
-### Android
+Then use any of the available options from the `tns` command line:
 
-`TnsOneSignal` is the native Android `com.onesignal.OneSignal` class.
+* [Emulate your project](https://github.com/NativeScript/nativescript-cli#emulate-your-project)
+* [Run your project](https://github.com/NativeScript/nativescript-cli#run-your-project)
+* [Full list of commands](https://github.com/NativeScript/nativescript-cli#the-commands)
 
-In your `main.ts`:
+## Unittesting
+This plugin automatically adds Jasmine-based unittest support to your plugin.
+Open `demo/app/tests/tests.js` and adjust its contents.
 
-```typescript
-import * as application from 'application';
-var TnsOneSignal = require('nativescript-onesignal').TnsOneSignal
+You can read more about this topic [here](https://docs.nativescript.org/tooling/testing).
 
-if (application.android) {
-	application.on(application.launchEvent, function(args: application.ApplicationEventData) {
+Once you're ready to test your plugin's API execute one of these commands in the plugin root:
 
-		try {
-
-			console.dump('TnsOneSignal', TnsOneSignal)
-			TnsOneSignal.startInit(application.android.context).init()
-
-		} catch (error) {
-			console.error('error', error)
-		}
-
-	})
-}
+```
+npm run test.ios
+npm run test.android
 ```
 
-## API Reference
-[iOS API Reference](https://documentation.onesignal.com/docs/ios-sdk-api)
+## Publish
 
-[Android API Reference](https://documentation.onesignal.com/docs/android-sdk-api)
+When you have everything ready to publish:
 
-## Typescript Typings
+* Bump the version number in `package.json`
+* `npm run build` - **very important** - ensure the latest is built **before** you publish
+* `npm publish`
 
-[iOS](https://github.com/roblav96/nativescript-onesignal/blob/master/typings/OneSignal.ios.d.ts)
+## Contributing - Want to make the seed better?
 
-Android - In the works...
+Or at least help keep it up to date with NativeScript releases, which would be excellent.
 
-## Demo
-```bash
-npm run setup
-# iOS
-npm run demo.ios
-# Android
-npm run demo.android
 ```
+npm install -g typescript  // if you don't already have it
+git clone https://github.com/NathanWalker/nativescript-plugin-seed
+cd nativescript-plugin-seed
 
-
-
-
-
-
-
-
-
-
-
+// Improve!
+```

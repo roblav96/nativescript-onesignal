@@ -1,0 +1,16 @@
+<!--  -->
+
+<Page loaded="onLoaded" unloaded="onUnloaded">
+
+    <Page.actionBar>
+        <ActionBar title="OneSignal Playground"></ActionBar>
+    </Page.actionBar>
+
+    <GridLayout rows="*">
+        <StackLayout>
+            <Button text="Do It" tap="doit" style.fontSize="40" />
+        </StackLayout>
+    </GridLayout>
+
+</Page>
+

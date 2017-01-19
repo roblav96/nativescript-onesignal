@@ -1,10 +1,5 @@
 // 
 
-// export declare var com: any;
-// export declare class com.onesignal.OneSignal { }
-// export declare class TnsOneSignal extends com.onesignal.OneSignal { }
+import * as application from 'application'
+import { EventEmitter } from 'eventemitter3'
 
-// export class _TnsOneSignal extends com.onesignal.OneSignal { }
-
-declare var com: any
-export var TnsOneSignal: any = com.onesignal.OneSignal

@@ -1,20 +1,25 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "removeComments": true,
-        "experimentalDecorators": true,
-        "noEmitHelpers": true,
-        "noEmitOnError": false,
-        "declaration": true
-    },
-    "files": [
-      "node_modules/tns-core-modules/tns-core-modules.d.ts",
-      "node_modules/tns-platform-declarations/tns-core-modules/android17.d.ts",
-      "node_modules/tns-platform-declarations/tns-core-modules/ios.d.ts",
-      "node_modules/tns-platform-declarations/tns-core-modules/org.nativescript.widgets.d.ts",
-      "onesignal.android.ts", 
-      "onesignal.ios.ts"
-    ],
-    "compileOnSave": false
+	"compilerOptions": {
+		"module": "commonjs",
+		"target": "es5",
+		"lib": [
+			"es2016"
+		],
+		"experimentalDecorators": true,
+		"emitDecoratorMetadata": true,
+		"skipLibCheck": true,
+		"skipDefaultLibCheck": true,
+		"removeComments": true,
+		"pretty": true
+	},
+	"include": [
+		"references.d.ts",
+        "typings/**/*.ts",
+		"*.ts"
+	],
+	"exclude": [
+		"demo",
+		"node_modules"
+	]
 }
+
