@@ -2,7 +2,7 @@
 	"name": "nativescript-onesignal",
 	"version": "1.0.6",
 	"description": "A Nativescript plugin for OneSignal's Push Notifications SDK",
-	"main": "onesignal.js",
+	"main": "onesignal",
 	"typings": "index.d.ts",
 	"nativescript": {
 		"platforms": {
