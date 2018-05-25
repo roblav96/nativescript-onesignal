@@ -9,8 +9,5 @@ android {
 }
 
 dependencies {
-	compile 'com.onesignal:OneSignal:3.+@aar'
-	compile 'com.google.android.gms:play-services-gcm:+'
-	compile 'com.google.android.gms:play-services-location:+'
+	compile 'com.onesignal:OneSignal:3.9.1'
 }
-
