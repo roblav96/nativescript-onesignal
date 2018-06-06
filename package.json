@@ -39,12 +39,16 @@
 		"demo.ios": "npm run preparedemo && cd demo && tns run ios",
 		"demo.android": "npm run preparedemo && cd demo && tns run android",
 		"preparedemo": "npm run build && cd demo && tns plugin remove nativescript-onesignal && tns plugin add .. && tns install",
-		"setup": "npm i && cd demo && npm i && cd .. && npm run build && cd demo && tns plugin add .. && cd .."
+		"setup": "npm i && cd demo && npm i && cd .. && npm run build && cd demo && tns plugin add .. && cd ..",
+    "postinstall": "node postinstall-hooks.js && node lib/postinstall.js",
+    "preuninstall": "node preuninstall-hooks.js"
 	},
 	"devDependencies": {
 		"tns-core-modules": "^2.2.0",
 		"tns-platform-declarations": "^2.2.0",
 		"typescript": "^1.8.10"
+	},
+	"dependencies": {
+		"nativescript-hook": "^0.2.4"
 	}
 }
-
