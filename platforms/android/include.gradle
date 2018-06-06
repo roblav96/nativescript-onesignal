@@ -1,4 +1,13 @@
-// 
+buildscript {
+    repositories {
+        maven { url 'https://plugins.gradle.org/m2/' } // Gradle Plugin Portal 
+    }
+    dependencies {
+        // https://github.com/OneSignal/OneSignal-Gradle-Plugin
+        classpath 'gradle.plugin.com.onesignal:onesignal-gradle-plugin:[0.10.1, 0.99.99]'
+    }
+}
+apply plugin: com.onesignal.androidsdk.GradleProjectPlugin
 
 android {
 	productFlavors {
@@ -6,6 +15,15 @@ android {
 			dimension 'nativescriptonesignal'
 		}
 	}
+
+// NOTE: The following section MUST be placed in your android {...} section in your app/build.gradle
+/*
+	defaultConfig {
+        manifestPlaceholders = [onesignal_app_id: "YOUR_ONESIGNAL_APP_ID",
+                                // Project number pulled from dashboard, local value is ignored.
+                                onesignal_google_project_number: 'REMOTE']
+    }
+ */
 }
 
 dependencies {
