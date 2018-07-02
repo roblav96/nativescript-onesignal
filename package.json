@@ -1,6 +1,6 @@
 {
 	"name": "nativescript-onesignal",
-	"version": "1.0.7",
+	"version": "1.0.8",
 	"description": "A Nativescript plugin for OneSignal's Push Notifications SDK",
 	"main": "onesignal",
 	"typings": "index.d.ts",
@@ -40,8 +40,8 @@
 		"demo.android": "npm run preparedemo && cd demo && tns run android",
 		"preparedemo": "npm run build && cd demo && tns plugin remove nativescript-onesignal && tns plugin add .. && tns install",
 		"setup": "npm i && cd demo && npm i && cd .. && npm run build && cd demo && tns plugin add .. && cd ..",
-    "postinstall": "node postinstall-hooks.js && node lib/postinstall.js",
-    "preuninstall": "node preuninstall-hooks.js"
+		"postinstall": "node postinstall-hooks.js && node lib/postinstall.js",
+		"preuninstall": "node preuninstall-hooks.js"
 	},
 	"devDependencies": {
 		"tns-core-modules": "^2.2.0",
