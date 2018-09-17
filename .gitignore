@@ -7,5 +7,4 @@ demo/lib
 demo/platforms
 demo/node_modules
 node_modules
-!lib/postinstall.js
-!*-hooks.js
+.DS_Store
