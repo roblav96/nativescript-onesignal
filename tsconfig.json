@@ -1,19 +1,16 @@
 {
-    "compilerOptions": {
-        "target": "es5",
-        "module": "commonjs",
-        "removeComments": true,
-        "experimentalDecorators": true,
-        "noEmitHelpers": true,
-        "noEmitOnError": false,
-        "declaration": true
-    },
-    "files": [
-      "node_modules/tns-core-modules/tns-core-modules.d.ts",
-      "node_modules/tns-platform-declarations/android.d.ts",
-      "node_modules/tns-platform-declarations/ios.d.ts",
-      "onesignal.android.ts", 
-      "onesignal.ios.ts"
-    ],
-    "compileOnSave": false
+  "compilerOptions": {
+    "target": "es5",
+    "module": "commonjs",
+    "removeComments": true,
+    "experimentalDecorators": true,
+    "noEmitHelpers": true,
+    "noEmitOnError": false,
+    "declaration": true
+  },
+  "include": [
+    "**/*.ts"
+  ],
+  "exclude": ["node_modules"],
+  "compileOnSave": false
 }
